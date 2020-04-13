@@ -21,7 +21,9 @@ class _SecondPageState extends State<SecondPage> {
           child: Center(
               child: Text(
         titlelist[index],
-        style: TextStyle(decoration: TextDecoration.underline),
+        style: TextStyle(fontSize: 15,
+          color: selectedIndex==index ? Colors.pink : Colors.black,
+          decoration: TextDecoration.underline),
       ))),
     );
   }
