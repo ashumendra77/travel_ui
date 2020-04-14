@@ -32,7 +32,7 @@ class _SecondPageState extends State<SecondPage> {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => DetailPage()));
+            context, MaterialPageRoute(builder: (context) => DetailPage(travelnameobject: travel)));
       },
       child: Row(
         children: <Widget>[

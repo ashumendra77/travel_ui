@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:travel_ui/travel_detail.dart';
 
 class DetailPage extends StatefulWidget {
+  final Travel travelnameobject;
+  // final List<String> tavel3@required this.tavel3,;
+
+  DetailPage({@required this.travelnameobject});
   @override
   _DetailPageState createState() => _DetailPageState();
 }
@@ -46,15 +51,15 @@ class _DetailPageState extends State<DetailPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   IconButton(
-                    onPressed: () => debugPrint("p"),
+                    onPressed: (){Navigator.pop(context);},
                     icon: Icon(Icons.arrow_back_ios),
                   ),
-                  Icon(Icons.short_text),
+                  Icon(Icons.short_text,size: 33,),
                 ],
               ),
               SizedBox(height: 15),
               Text(
-                "Koh Samui,Thailand",
+                widget.travelnameobject.name +", "+ widget.travelnameobject.country,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
               SizedBox(height: 15),
@@ -87,13 +92,13 @@ class _DetailPageState extends State<DetailPage> {
                             Expanded(
                                 child: Text(
                               "Lipa Noi Beach",
-                              style: TextStyle(fontSize: 20),
+                              style: TextStyle(fontSize: 19),
                             )),
                             Text(
                               "4.5",
-                              style: TextStyle(color: Colors.pink),
+                              style: TextStyle(color: Color(0xfff36f7c)),
                             ),
-                            Icon(Icons.star, color: Colors.pink)
+                            Icon(Icons.star, color: Color(0xfff36f7c))
                           ],
                         )),
                   ),
@@ -104,7 +109,7 @@ class _DetailPageState extends State<DetailPage> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                              image: AssetImage("images/pic1.jpeg"),
+                              image: AssetImage(widget.travelnameobject.imageUrl),
                               fit: BoxFit.fill))),
                 ],
               ),
@@ -145,18 +150,32 @@ class _DetailPageState extends State<DetailPage> {
               // color: Colors.blue[700],
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.pink),
+                border: Border.all(color: Color(0xfff36f7c)),
               ),
-              child: Center(child: Text("\$ ${2278}")),
+              child: Center(child: Text("\$ ${2278}",style: TextStyle(color: Color(0xfff36f7c)),)),
             ),
+            // Container(
+            //   height: 490,
+            //   decoration: BoxDecoration(
+            //       gradient: LinearGradient(
+            //     colors: [
+            //       Colors.black.withOpacity(0.0),
+            //       Colors.black,
+            //     ],
+            //     begin: FractionalOffset.topCenter,
+            //     end: FractionalOffset.center,
+            //     stops: [0,1]
+            //   )),
+            // ),
             Container(
                 height: 60,
                 width: 170,
                 // color: Colors.blue[700],
                 decoration: BoxDecoration(
-                  color: Colors.pink,
+                  color: Color(0xfff36f7c),
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Colors.pink),
+                  border: Border.all(color: Color(0xfff36f7c)),
+
                 ),
                 child: FlatButton(
                   onPressed: () => debugPrint("p"),
