@@ -20,18 +20,42 @@ class _DetailPageState extends State<DetailPage> {
         selectbottonlist = index;
         setState(() {});
       },
-      child: Center(
-        child: Container(
-            height: 50,
-            width: 100,
-            child: Text(
-              buttonlist[index],
-              style: TextStyle(
-                  fontSize: 18,
-                  color:
-                      selectbottonlist == index ? Colors.pink : Colors.black),
-            )),
-      ),
+      child: Container(
+          height: 50,
+          width: 125,
+          // color: Colors.yellow,
+          child: Padding(
+            padding:  EdgeInsets.only(left:15.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  buttonlist[index],
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: selectbottonlist == index
+                          ? Color(0xfff36f7c)
+                          : Colors.black),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+
+                CircleAvatar(
+                  radius: 3,
+                  backgroundColor: selectbottonlist == index
+                      ? Color(0xfff36f7c)
+                      : Colors.white,
+                )
+
+                // Icon(Icons.autorenew,
+                //     size: 10,
+                //     color: selectbottonlist == index
+                //         ? Colors.pink
+                //         : Colors.white),
+              ],
+            ),
+          )),
     );
   }
 
@@ -45,96 +69,116 @@ class _DetailPageState extends State<DetailPage> {
       body: SafeArea(
           child: ListView(
         children: <Widget>[
-          Column(
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  IconButton(
-                    onPressed: (){Navigator.pop(context);},
-                    icon: Icon(Icons.arrow_back_ios),
+          Padding(
+            padding: EdgeInsets.only(left: 10.0, right: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Row(
+                  // crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: Icon(Icons.arrow_back_ios),
+                    ),
+                    Icon(
+                      Icons.short_text,
+                      size: 33,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 15),
+                Padding(
+                  padding: EdgeInsets.only(left: 15.0),
+                  child: Text(
+                    widget.travelnameobject.name +
+                        ", " +
+                        widget.travelnameobject.country,
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
                   ),
-                  Icon(Icons.short_text,size: 33,),
-                ],
-              ),
-              SizedBox(height: 15),
-              Text(
-                widget.travelnameobject.name +", "+ widget.travelnameobject.country,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-              ),
-              SizedBox(height: 15),
-              Stack(
-                children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.only(top: 80),
-                    height: 180,
-                    width: 280,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey[400],
-                              blurRadius: 4,
-                              spreadRadius: 3,
-                              offset: Offset(4, 4)),
-                          BoxShadow(
-                              color: Colors.grey[400],
-                              blurRadius: 4,
-                              spreadRadius: 3,
-                              offset: Offset(-4, -4)),
-                        ]),
-                    child: Container(
-                        margin: EdgeInsets.only(left: 16, right: 16, bottom: 9),
-                        alignment: Alignment.bottomCenter,
-                        child: Row(
-                          children: <Widget>[
-                            Expanded(
-                                child: Text(
-                              "Lipa Noi Beach",
-                              style: TextStyle(fontSize: 19),
-                            )),
-                            Text(
-                              "4.5",
-                              style: TextStyle(color: Color(0xfff36f7c)),
-                            ),
-                            Icon(Icons.star, color: Color(0xfff36f7c))
-                          ],
-                        )),
-                  ),
-                  Container(
-                      margin: EdgeInsets.only(top: 10, left: 16),
-                      height: 200,
-                      width: 250,
+                ),
+                SizedBox(height: 15),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.only(top: 80, left: 15),
+                      height: 180,
+                      width: 280,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                              image: AssetImage(widget.travelnameobject.imageUrl),
-                              fit: BoxFit.fill))),
-                ],
-              ),
-              SizedBox(height: 20),
-              Container(
-                  height: 60,
-                  // color: Colors.green,
-                  child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: buttonlist
-                          .toList()
-                          .asMap()
-                          .entries
-                          .map((MapEntry map) {
-                        return getBotton(map.key);
-                      }).toList())),
-              SizedBox(height: 10),
-              Text(
-                "Koh samui is famous for its magnificient beaches, forests on mountain slop and cold waterfall that can't found anywhere else in Thailand. On Koh samui, you will find quite fishing villages, coconut trees harvestage by monkeys, stunning waterfall.",
-                style: TextStyle(fontSize: 17),
-              ),
-              //  BottomNavigationBar(onTap: (){},)
-              // BottomNavigationBar(items: <BottomNavigationBarItem>[
-              // ],)
-            ],
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey[400],
+                                blurRadius: 4,
+                                spreadRadius: 3,
+                                offset: Offset(4, 4)),
+                            BoxShadow(
+                                color: Colors.grey[400],
+                                blurRadius: 4,
+                                spreadRadius: 3,
+                                offset: Offset(-4, -4)),
+                          ]),
+                      child: Container(
+                          margin:
+                              EdgeInsets.only(left: 16, right: 16, bottom: 9),
+                          alignment: Alignment.bottomCenter,
+                          child: Row(
+                            children: <Widget>[
+                              Expanded(
+                                  child: Text(
+                                "Lipa Noi Beach",
+                                style: TextStyle(fontSize: 16),
+                              )),
+                              Text(
+                                widget.travelnameobject.rating,
+                                style: TextStyle(color: Color(0xfff36f7c)),
+                              ),
+                              Icon(Icons.star, color: Color(0xfff36f7c))
+                            ],
+                          )),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(top: 10, left: 30),
+                        height: 200,
+                        width: 250,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    widget.travelnameobject.imageUrl),
+                                fit: BoxFit.fill))),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Container(
+                    height: 60,
+                    // color: Colors.green,
+                    child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: buttonlist
+                            .toList()
+                            .asMap()
+                            .entries
+                            .map((MapEntry map) {
+                          return getBotton(map.key);
+                        }).toList())),
+                // SizedBox(height: 10),
+                Padding(
+                  padding: EdgeInsets.only(left: 8.0),
+                  child: Text(
+                    "Koh Samui is famous for its magnificient beaches, forests on mountain slopes and cold waterfalls that can't be found anywhere else in Thailand. On Koh Samui, you'll find quite fishing villages, coconut palm trees harvested by monkeys, stunning waterfalls.",
+                    style: TextStyle(fontSize: 15),
+                  ),
+                ),
+                //  BottomNavigationBar(onTap: (){},)
+                // BottomNavigationBar(items: <BottomNavigationBarItem>[
+                // ],)
+              ],
+            ),
           )
         ],
       )),
@@ -152,7 +196,11 @@ class _DetailPageState extends State<DetailPage> {
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: Color(0xfff36f7c)),
               ),
-              child: Center(child: Text("\$ ${2278}",style: TextStyle(color: Color(0xfff36f7c)),)),
+              child: Center(
+                  child: Text(
+                "\$ ${2350}",
+                style: TextStyle(color: Color(0xfff36f7c)),
+              )),
             ),
             // Container(
             //   height: 490,
@@ -175,7 +223,6 @@ class _DetailPageState extends State<DetailPage> {
                   color: Color(0xfff36f7c),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: Color(0xfff36f7c)),
-
                 ),
                 child: FlatButton(
                   onPressed: () => debugPrint("p"),

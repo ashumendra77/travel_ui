@@ -18,13 +18,26 @@ class _SecondPageState extends State<SecondPage> {
         setState(() {});
       },
       child: Container(
-          child: Center(
-              child: Text(
+        height: 40,
+        // color: Colors.yellow,
+          child: Column(
+            children: <Widget>[
+              Center(
+                  child: Text(
         titlelist[index],
         style: TextStyle(fontSize: 15,
-          color: selectedIndex==index ? Colors.pink : Colors.black,
-          decoration: TextDecoration.underline),
-      ))),
+              color: selectedIndex==index ? Color(0xfff36f7c) : Colors.black,
+              ),
+              
+      ),
+      
+      ),
+
+      SizedBox(height: 8,),
+       CircleAvatar(backgroundColor: selectedIndex==index ? Color(0xfff36f7c) : Colors.white,radius: 3,)
+            ],
+          )),
+          
     );
   }
 
@@ -229,8 +242,8 @@ class _SecondPageState extends State<SecondPage> {
                 //   }).toList()),
                 // ),
                 SizedBox(
-                  height: 15,
-                  width: 30,
+                  // height: 10,
+                  // width: 30,
                 ),
                 Container(
                     height: 250,
