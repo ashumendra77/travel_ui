@@ -68,7 +68,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: Colors.redAccent,
                         borderRadius: BorderRadius.circular(20)),
                     child: FlatButton(
-                      onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondPage()));},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SecondPage()));
+                      },
                       child: Text(
                         "sign in",
                         style: TextStyle(color: Colors.white, fontSize: 18),

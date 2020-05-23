@@ -18,26 +18,30 @@ class _SecondPageState extends State<SecondPage> {
         setState(() {});
       },
       child: Container(
-        height: 40,
-        // color: Colors.yellow,
+          height: 40,
           child: Column(
             children: <Widget>[
               Center(
-                  child: Text(
-        titlelist[index],
-        style: TextStyle(fontSize: 15,
-              color: selectedIndex==index ? Color(0xfff36f7c) : Colors.black,
+                child: Text(
+                  titlelist[index],
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: selectedIndex == index
+                        ? Color(0xfff36f7c)
+                        : Colors.black,
+                  ),
+                ),
               ),
-              
-      ),
-      
-      ),
-
-      SizedBox(height: 8,),
-       CircleAvatar(backgroundColor: selectedIndex==index ? Color(0xfff36f7c) : Colors.white,radius: 3,)
+              SizedBox(
+                height: 8,
+              ),
+              CircleAvatar(
+                backgroundColor:
+                    selectedIndex == index ? Color(0xfff36f7c) : Colors.white,
+                radius: 3,
+              )
             ],
           )),
-          
     );
   }
 
@@ -45,7 +49,9 @@ class _SecondPageState extends State<SecondPage> {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => DetailPage(travelnameobject: travel)));
+            context,
+            MaterialPageRoute(
+                builder: (context) => DetailPage(travelnameobject: travel)));
       },
       child: Row(
         children: <Widget>[
@@ -107,31 +113,26 @@ class _SecondPageState extends State<SecondPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                // Padding(
-                //   padding: EdgeInsets.all(6.0),
-                  // child:
-                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      // SizedBox(height:30),
-                      Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.red,
-                              image: DecorationImage(
-                                image: AssetImage("images/pic5.jpeg"),
-                                fit: BoxFit.fill,
-                              ))),
-                      Icon(
-                        Icons.short_text,
-                        size: 30,
-                      )
-                    ],
-                  ),
-                  SizedBox(height:15),
-                // ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Container(
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.red,
+                            image: DecorationImage(
+                              image: AssetImage("images/pic5.jpeg"),
+                              fit: BoxFit.fill,
+                            ))),
+                    Icon(
+                      Icons.short_text,
+                      size: 30,
+                    )
+                  ],
+                ),
+                SizedBox(height: 15),
                 Text("Discover",
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 23)),
@@ -150,7 +151,7 @@ class _SecondPageState extends State<SecondPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Padding(
-                        padding:  EdgeInsets.only(left:30.0),
+                        padding: EdgeInsets.only(left: 30.0),
                         child: Text("Search something..."),
                       ),
                       Container(
@@ -160,7 +161,6 @@ class _SecondPageState extends State<SecondPage> {
                         decoration: BoxDecoration(
                             color: Color(0xfff36f7c),
                             borderRadius: BorderRadius.circular(20)),
-                        // color:Colors.white,
                         child: Icon(
                           Icons.search,
                           color: Colors.white,
@@ -224,7 +224,6 @@ class _SecondPageState extends State<SecondPage> {
                   height: 60,
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      // scrollDirection: Axis.horizontal,
                       children: titlelist
                           .toList()
                           .asMap()
@@ -232,18 +231,6 @@ class _SecondPageState extends State<SecondPage> {
                           .map((MapEntry map) {
                         return getIndex(map.key);
                       }).toList()),
-                ),
-                // Container(
-                //   height:60,
-                //   child:Row(
-                //     // scrollDirection: Axis.horizontal,
-                //     children: titlelist.toList().asMap().entries.map((MapEntry map){
-                //     return getIndex(map.key);
-                //   }).toList()),
-                // ),
-                SizedBox(
-                  // height: 10,
-                  // width: 30,
                 ),
                 Container(
                     height: 250,
@@ -256,7 +243,6 @@ class _SecondPageState extends State<SecondPage> {
                             .map((MapEntry map) {
                           return getDetail(map.value);
                         }).toList())),
-
                 SizedBox(height: 15)
               ],
             ),

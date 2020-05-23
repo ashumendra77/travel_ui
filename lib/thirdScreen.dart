@@ -3,7 +3,6 @@ import 'package:travel_ui/travel_detail.dart';
 
 class DetailPage extends StatefulWidget {
   final Travel travelnameobject;
-  // final List<String> tavel3@required this.tavel3,;
 
   DetailPage({@required this.travelnameobject});
   @override
@@ -23,9 +22,8 @@ class _DetailPageState extends State<DetailPage> {
       child: Container(
           height: 50,
           width: 125,
-          // color: Colors.yellow,
           child: Padding(
-            padding:  EdgeInsets.only(left:15.0),
+            padding: EdgeInsets.only(left: 15.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -40,19 +38,12 @@ class _DetailPageState extends State<DetailPage> {
                 SizedBox(
                   height: 8,
                 ),
-
                 CircleAvatar(
                   radius: 3,
                   backgroundColor: selectbottonlist == index
                       ? Color(0xfff36f7c)
                       : Colors.white,
                 )
-
-                // Icon(Icons.autorenew,
-                //     size: 10,
-                //     color: selectbottonlist == index
-                //         ? Colors.pink
-                //         : Colors.white),
               ],
             ),
           )),
@@ -62,10 +53,6 @@ class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // bottomNavigationBar: BottomNavigationBarItem(),
-      // appBar:AppBar(
-      //   // bottomNavigationBar:
-      // ),
       body: SafeArea(
           child: ListView(
         children: <Widget>[
@@ -75,7 +62,6 @@ class _DetailPageState extends State<DetailPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Row(
-                  // crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     IconButton(
@@ -104,9 +90,9 @@ class _DetailPageState extends State<DetailPage> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.only(top: 80, left: 15),
-                      height: 180,
-                      width: 280,
+                      margin: EdgeInsets.only(top: 80, left: 15, right: 15),
+                      height: 190,
+                      width: 310,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.white,
@@ -142,9 +128,9 @@ class _DetailPageState extends State<DetailPage> {
                           )),
                     ),
                     Container(
-                        margin: EdgeInsets.only(top: 10, left: 30),
-                        height: 200,
-                        width: 250,
+                        margin: EdgeInsets.only(top: 10, left: 30, right: 30),
+                        height: 210,
+                        width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             image: DecorationImage(
@@ -156,7 +142,6 @@ class _DetailPageState extends State<DetailPage> {
                 SizedBox(height: 20),
                 Container(
                     height: 60,
-                    // color: Colors.green,
                     child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: buttonlist
@@ -166,7 +151,6 @@ class _DetailPageState extends State<DetailPage> {
                             .map((MapEntry map) {
                           return getBotton(map.key);
                         }).toList())),
-                // SizedBox(height: 10),
                 Padding(
                   padding: EdgeInsets.only(left: 8.0),
                   child: Text(
@@ -174,9 +158,6 @@ class _DetailPageState extends State<DetailPage> {
                     style: TextStyle(fontSize: 15),
                   ),
                 ),
-                //  BottomNavigationBar(onTap: (){},)
-                // BottomNavigationBar(items: <BottomNavigationBarItem>[
-                // ],)
               ],
             ),
           )
@@ -191,7 +172,6 @@ class _DetailPageState extends State<DetailPage> {
             Container(
               height: 60,
               width: 100,
-              // color: Colors.blue[700],
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: Color(0xfff36f7c)),
@@ -202,23 +182,9 @@ class _DetailPageState extends State<DetailPage> {
                 style: TextStyle(color: Color(0xfff36f7c)),
               )),
             ),
-            // Container(
-            //   height: 490,
-            //   decoration: BoxDecoration(
-            //       gradient: LinearGradient(
-            //     colors: [
-            //       Colors.black.withOpacity(0.0),
-            //       Colors.black,
-            //     ],
-            //     begin: FractionalOffset.topCenter,
-            //     end: FractionalOffset.center,
-            //     stops: [0,1]
-            //   )),
-            // ),
             Container(
                 height: 60,
                 width: 170,
-                // color: Colors.blue[700],
                 decoration: BoxDecoration(
                   color: Color(0xfff36f7c),
                   borderRadius: BorderRadius.circular(20),
