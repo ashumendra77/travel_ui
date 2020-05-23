@@ -10,6 +10,13 @@ class SecondPage extends StatefulWidget {
 class _SecondPageState extends State<SecondPage> {
   int selectedIndex = 0;
   List<String> titlelist = ["New", "Most viewed", "Hot tour", "All"];
+  List<String> imagelist = [
+    "images/o.jpeg",
+    "images/6.jpeg",
+    "images/7.jpeg",
+    "images/8.jpeg",
+    "images/9.jpeg"
+  ];
 
   Widget getIndex(int index) {
     return GestureDetector(
@@ -101,6 +108,30 @@ class _SecondPageState extends State<SecondPage> {
       ),
     );
   }
+
+  // Widget getRecomm(int index) {
+  //   return GestureDetector(
+  //     onTap: () {},
+  //     child: Row(
+  //       children: <Widget>[
+  //         for (int i = 0; i < imagelist.length; i++)
+
+  //           Container(
+  //             // margin: EdgeInsets.symmetric(horizontal:20),
+  //             height: 180,
+  //             width: 280,
+  //             decoration: BoxDecoration(
+  //                 borderRadius: BorderRadius.circular(15),
+  //                 color: Colors.amberAccent,
+  //                 image: DecorationImage(
+  //                     image: AssetImage(imagelist[index]), fit: BoxFit.fill)),
+  //           ),
+  //           SizedBox(width:50)
+
+  //       ],
+  //     ),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -243,7 +274,70 @@ class _SecondPageState extends State<SecondPage> {
                             .map((MapEntry map) {
                           return getDetail(map.value);
                         }).toList())),
-                SizedBox(height: 15)
+                SizedBox(height: 15),
+                Text(
+                  "Recommended for you",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                ),
+                SizedBox(height: 10),
+
+                Container(
+                    height: 180,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            Container(
+                              height: 180,
+                              width: 280,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: Colors.amberAccent,
+                                  image: DecorationImage(
+                                      image: AssetImage(imagelist[0]),
+                                      fit: BoxFit.fill)),
+                            ),
+                            SizedBox(width: 10),
+                            Container(
+                              height: 180,
+                              width: 280,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: Colors.amberAccent,
+                                  image: DecorationImage(
+                                      image: AssetImage(imagelist[1]),
+                                      fit: BoxFit.fill)),
+                            ),
+                            SizedBox(width: 10),
+                            Container(
+                              height: 180,
+                              width: 280,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: Colors.amberAccent,
+                                  image: DecorationImage(
+                                      image: AssetImage(imagelist[2]),
+                                      fit: BoxFit.fill)),
+                            ),
+                            SizedBox(width: 10)
+                          ],
+                        )
+                      ],
+                    ))
+
+                // Container(
+                //   // margin: EdgeInsets.symmetric(horizontal:20),
+                //   height:180,
+                //   child:ListView(
+                //     scrollDirection: Axis.horizontal,
+                //     children:imagelist.toList().asMap().entries.map((MapEntry map){
+                //     return getRecomm(map.key);
+                //   }) .toList())
+                // )
+                // // Row(children: imagelist.toList().asMap().entries.map((MapEntry map){
+                //   return getRecomm();
+                // }).toList())
               ],
             ),
           ),

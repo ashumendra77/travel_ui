@@ -25,7 +25,7 @@ class _DetailPageState extends State<DetailPage> {
           child: Padding(
             padding: EdgeInsets.only(left: 15.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              // crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Text(
                   buttonlist[index],
