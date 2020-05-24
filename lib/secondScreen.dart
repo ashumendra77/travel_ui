@@ -58,7 +58,8 @@ class _SecondPageState extends State<SecondPage> {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => DetailPage(travelnameobject: travel,imageobj:travel.image)));
+                builder: (context) => DetailPage(
+                    travelnameobject: travel, imageobj: travel.image)));
       },
       child: Row(
         children: <Widget>[
@@ -108,30 +109,6 @@ class _SecondPageState extends State<SecondPage> {
       ),
     );
   }
-
-  // Widget getRecomm(int index) {
-  //   return GestureDetector(
-  //     onTap: () {},
-  //     child: Row(
-  //       children: <Widget>[
-  //         for (int i = 0; i < imagelist.length; i++)
-
-  //           Container(
-  //             // margin: EdgeInsets.symmetric(horizontal:20),
-  //             height: 180,
-  //             width: 280,
-  //             decoration: BoxDecoration(
-  //                 borderRadius: BorderRadius.circular(15),
-  //                 color: Colors.amberAccent,
-  //                 image: DecorationImage(
-  //                     image: AssetImage(imagelist[index]), fit: BoxFit.fill)),
-  //           ),
-  //           SizedBox(width:50)
-
-  //       ],
-  //     ),
-  //   );
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -280,7 +257,6 @@ class _SecondPageState extends State<SecondPage> {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
                 SizedBox(height: 10),
-
                 Container(
                     height: 180,
                     child: ListView(
@@ -325,8 +301,6 @@ class _SecondPageState extends State<SecondPage> {
                         )
                       ],
                     ))
-
-               
               ],
             ),
           ),

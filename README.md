@@ -1,5 +1,6 @@
 # travel_ui
 
 Please like if you think Travel_Ui is helpful to you or that my work is valuable.
+And you can also use this for Planning you Tour.
 
-<img src="shoes1.jpg" width="40%" height="40%"> <img src="shoes2.jpg" width="40%" height="40%">
+<img src="1.jpg" width="30%" height="40%"> <img src="2.jpg" width="30%" height="40%"><img src="2.jpg" width="30%" height="40%">
