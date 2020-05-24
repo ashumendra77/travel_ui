@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:travel_ui/secondScreen.dart';
 
 void main() => runApp(MyApp());
@@ -19,6 +20,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  @override
+  void dispose() {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

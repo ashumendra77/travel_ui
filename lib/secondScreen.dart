@@ -58,7 +58,7 @@ class _SecondPageState extends State<SecondPage> {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => DetailPage(travelnameobject: travel)));
+                builder: (context) => DetailPage(travelnameobject: travel,imageobj:travel.image)));
       },
       child: Row(
         children: <Widget>[
@@ -326,18 +326,7 @@ class _SecondPageState extends State<SecondPage> {
                       ],
                     ))
 
-                // Container(
-                //   // margin: EdgeInsets.symmetric(horizontal:20),
-                //   height:180,
-                //   child:ListView(
-                //     scrollDirection: Axis.horizontal,
-                //     children:imagelist.toList().asMap().entries.map((MapEntry map){
-                //     return getRecomm(map.key);
-                //   }) .toList())
-                // )
-                // // Row(children: imagelist.toList().asMap().entries.map((MapEntry map){
-                //   return getRecomm();
-                // }).toList())
+               
               ],
             ),
           ),

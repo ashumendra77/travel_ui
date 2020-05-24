@@ -3,8 +3,9 @@ import 'package:travel_ui/travel_detail.dart';
 
 class DetailPage extends StatefulWidget {
   final Travel travelnameobject;
+  final List imageobj;
 
-  DetailPage({@required this.travelnameobject});
+  DetailPage({@required this.travelnameobject, @required this.imageobj});
   @override
   _DetailPageState createState() => _DetailPageState();
 }
@@ -87,59 +88,123 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                 ),
                 SizedBox(height: 15),
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(top: 80, left: 15, right: 15),
-                      height: 190,
-                      width: 310,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey[400],
-                                blurRadius: 4,
-                                spreadRadius: 3,
-                                offset: Offset(4, 4)),
-                            BoxShadow(
-                                color: Colors.grey[400],
-                                blurRadius: 4,
-                                spreadRadius: 3,
-                                offset: Offset(-4, -4)),
-                          ]),
-                      child: Container(
-                          margin:
-                              EdgeInsets.only(left: 16, right: 16, bottom: 9),
-                          alignment: Alignment.bottomCenter,
-                          child: Row(
-                            children: <Widget>[
-                              Expanded(
-                                  child: Text(
-                                "Lipa Noi Beach",
-                                style: TextStyle(fontSize: 16),
-                              )),
-                              Text(
-                                widget.travelnameobject.rating,
-                                style: TextStyle(color: Color(0xfff36f7c)),
-                              ),
-                              Icon(Icons.star, color: Color(0xfff36f7c))
-                            ],
-                          )),
-                    ),
-                    Container(
-                        margin: EdgeInsets.only(top: 10, left: 30, right: 30),
-                        height: 210,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    widget.travelnameobject.imageUrl),
-                                fit: BoxFit.fill))),
-                  ],
-                ),
-                SizedBox(height: 20),
+                Container(
+                    height: 290,
+                    child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) => Stack(
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.only(
+                                      top: 80, left: 15, right: 15),
+                                  height: 190,
+                                  width: 280,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                            color: Colors.grey[400],
+                                            blurRadius: 4,
+                                            spreadRadius: 3,
+                                            offset: Offset(4, 4)),
+                                        BoxShadow(
+                                            color: Colors.grey[400],
+                                            blurRadius: 4,
+                                            spreadRadius: 3,
+                                            offset: Offset(-4, -4)),
+                                      ]),
+                                  child: Container(
+                                      margin: EdgeInsets.only(
+                                          left: 16, right: 16, bottom: 9),
+                                      alignment: Alignment.bottomCenter,
+                                      child: Row(
+                                        children: <Widget>[
+                                          Expanded(
+                                              child: Text(
+                                            "Lipa Noi Beach",
+                                            style: TextStyle(fontSize: 16),
+                                          )),
+                                          Text(
+                                            widget.travelnameobject.rating,
+                                            style: TextStyle(
+                                                color: Color(0xfff36f7c)),
+                                          ),
+                                          Icon(Icons.star,
+                                              color: Color(0xfff36f7c))
+                                        ],
+                                      )),
+                                ),
+                                Container(
+                                    margin: EdgeInsets.only(
+                                        top: 10, left: 30, right: 30),
+                                    height: 200,
+                                    width: 250,
+                                    // width: MediaQuery.of(context).size.width,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                widget.imageobj[index]),
+                                            fit: BoxFit.fill))),
+                              ],
+                            ),
+                        separatorBuilder: (context, index) =>
+                            SizedBox(width: 5),
+                        itemCount: widget.imageobj.length)),
+                // Stack(
+                //   children: <Widget>[
+                //     Container(
+                //       margin: EdgeInsets.only(top: 80, left: 15, right: 15),
+                //       height: 190,
+                //       width: 310,
+                //       decoration: BoxDecoration(
+                //           borderRadius: BorderRadius.circular(10),
+                //           color: Colors.white,
+                //           boxShadow: [
+                //             BoxShadow(
+                //                 color: Colors.grey[400],
+                //                 blurRadius: 4,
+                //                 spreadRadius: 3,
+                //                 offset: Offset(4, 4)),
+                //             BoxShadow(
+                //                 color: Colors.grey[400],
+                //                 blurRadius: 4,
+                //                 spreadRadius: 3,
+                //                 offset: Offset(-4, -4)),
+                //           ]),
+                //       child: Container(
+                //           margin:
+                //               EdgeInsets.only(left: 16, right: 16, bottom: 9),
+                //           alignment: Alignment.bottomCenter,
+                //           child: Row(
+                //             children: <Widget>[
+                //               Expanded(
+                //                   child: Text(
+                //                 "Lipa Noi Beach",
+                //                 style: TextStyle(fontSize: 16),
+                //               )),
+                //               Text(
+                //                 widget.travelnameobject.rating,
+                //                 style: TextStyle(color: Color(0xfff36f7c)),
+                //               ),
+                //               Icon(Icons.star, color: Color(0xfff36f7c))
+                //             ],
+                //           )),
+                //     ),
+                //     Container(
+                //         margin: EdgeInsets.only(top: 10, left: 30, right: 30),
+                //         height: 210,
+                //         width: MediaQuery.of(context).size.width,
+                //         decoration: BoxDecoration(
+                //             borderRadius: BorderRadius.circular(20),
+                //             image: DecorationImage(
+                //                 image: AssetImage(
+                //                     widget.travelnameobject.imageUrl),
+                //                 fit: BoxFit.fill))),
+                //   ],
+                // ),
+                // SizedBox(height: 20),
                 Container(
                     height: 60,
                     child: ListView(
