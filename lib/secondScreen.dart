@@ -59,7 +59,8 @@ class _SecondPageState extends State<SecondPage> {
             context,
             MaterialPageRoute(
                 builder: (context) => DetailPage(
-                    travelnameobject: travel, imageobj: travel.image)));
+                      travelnameobject: travel,
+                    )));
       },
       child: Row(
         children: <Widget>[
