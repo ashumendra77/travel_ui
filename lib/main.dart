@@ -62,16 +62,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     Container(
                         height: 480,
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: FractionalOffset.center,
-                            end: FractionalOffset.bottomCenter,
-                            colors: [
-                              Colors.black.withOpacity(0.0),
-                              Colors.black,
-                            ],
-                            stops: [0.0, 1],
-                          ),
-                        )),
+                            gradient: LinearGradient(
+                          begin: FractionalOffset.center,
+                          end: FractionalOffset.bottomCenter,
+                          colors: [
+                            Colors.black.withOpacity(0.0),
+                            Colors.black,
+                          ],
+                          stops: [0.0, 1],
+                        ))),
                   ],
                 ),
                 Container(
@@ -81,17 +80,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: Colors.redAccent,
                         borderRadius: BorderRadius.circular(20)),
                     child: FlatButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SecondPage()));
-                      },
-                      child: Text(
-                        "sign in",
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      ),
-                    )),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SecondPage()));
+                        },
+                        child: Text(
+                          "sign in",
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                        ))),
                 SizedBox(height: 19),
                 Text(
                   "Create an account",
